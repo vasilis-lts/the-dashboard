@@ -1,0 +1,140 @@
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+button.MuiButton-root {
+  text-transform: capitalize;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center-x {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center-xy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-jcsb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.boxMargin {
+  margin: 12px 11px 0px 11px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.mui-shadow {
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+
+
+.screen-container {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+
+  .MuiSelect-select {
+    border-color: #fff;
+    width: 200px;
+    padding-left: 26px;
+    display: flex;
+    align-items: center;
+  }
+
+  .MuiSelect-select svg {
+    margin-top: -2px;
+    margin-right: 5px;
+  }
+
+  .MuiList-root svg {
+    margin-right: 5px;
+  }
+
+  select {
+    ::before {
+      border-color: #fff;
+    }
+
+    ::after {
+      border-color: #fff;
+    }
+  }
+
+
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .MuiGrid-root.MuiGrid-item.resp {
+    padding-top: 10px !important;
+  }
+
+  .flex-resp {
+    flex-direction: column;
+  }
+}

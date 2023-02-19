@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
+@import 'styles/common.scss';
+@import 'styles/colors.scss';
+@import 'styles/overrides.scss';
+
+* {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+#root,
+.App {
+  height: 100%;
+}
+
+////////////////
+/// variables //
+////////////////
+
+$headerHeight: 70px;
+
+////////////////
+
+#mainContentHeader {
+  height: $headerHeight;
+}
+
+#drawerList {
+  background-color: $dark_main;
+
+  li {
+    color: white
+  }
+
+  svg {
+    fill: white;
+  }
+
+  li:hover {
+    background-color: lighten($color: $dark_main, $amount: 10);
+  }
+}
+
+#drawerHeader {
+  background-color: $dark_main;
+}
+
+#mainContent {
+  background-color: $cream;
+}
+
+#mobileNavigation,
+.mobile-only {
+  display: none;
+}
+
+
+@media only screen and (max-width: 767px) {
+  #sidebar {
+    display: none;
+  }
+
+  #mobileNavigation {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobile-only {
+    display: flex;
+  }
+
+  .account-username {
+    display: none;
+  }
+}

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
+import useAppState from '../hooks/useAppState';
 
 interface IResponsiveCard {
   title: string;
@@ -16,6 +17,7 @@ const CardStyle = styled('div')(({ theme }) => ({
 
 
 function ResponsiveCard({ title, subTitle, imgUrl }: IResponsiveCard) {
+  const { ActiveCurrency } = useAppState();
 
   return (
     <Grid item xs={12} md={6} lg={4}>
@@ -30,10 +32,10 @@ function ResponsiveCard({ title, subTitle, imgUrl }: IResponsiveCard) {
                   {title}
                 </Typography>
                 <div className="flex-center-y">
-                  <Typography sx={{ fontSize: 30, fontWeight: 700 }} color={'primary'} gutterBottom>
+                  <Typography sx={{ fontSize: 30, fontWeight: 700 }} color={'text.secondary'} gutterBottom>
                     {subTitle}
                   </Typography>
-                  <Typography sx={{ ml: .5 }} variant='subtitle1' color={'primary'} >USD</Typography>
+                  <Typography sx={{ ml: .5, textTransform: 'uppercase' }} variant='subtitle1' color={'primary'} >{ActiveCurrency}</Typography>
                 </div>
               </Box>
 

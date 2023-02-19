@@ -14,9 +14,9 @@ function modifyPricesArray(prices, dayRange) {
   return modifiedPrices;
 }
 
-async function getCoinRangePrice(coin, dayRange) {
+async function getCoinRangePrice(coin, dayRange, activeCurrency) {
   try {
-    const response = await fetch(`${apiSettings.BASE_URL}/coins/${coin}/market_chart?vs_currency=usd&days=${dayRange}&interval=daily`);
+    const response = await fetch(`${apiSettings.BASE_URL}/coins/${coin}/market_chart?vs_currency=${activeCurrency}&days=${dayRange}&interval=daily`);
     if (!response.ok) {
       throw Error(`HTTP error! status: ${response.status}`);
     }
@@ -29,10 +29,10 @@ async function getCoinRangePrice(coin, dayRange) {
   }
 }
 
-export default function useCoinRangePrice(coin, dayRange) {
+export default function useCoinRangePrice(coin, dayRange, activeCurrency) {
   return useQuery(
-    ["coinRangePrice", coin, dayRange],
-    () => getCoinRangePrice(coin, dayRange),
+    ["coinRangePrice", coin, dayRange, activeCurrency],
+    () => getCoinRangePrice(coin, dayRange, activeCurrency),
     { staleTime: 20000000 }
   );
 }

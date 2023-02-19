@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Box, Grid, Typography } from '@mui/material';
 import ResponsiveCard from '../../components/ResponsiveCard';
+import useAppState from "../../hooks/useAppState";
 import useFetchCoins from '../../hooks/useFetchCoins';
 import MarketChart from './MarketChart';
 
@@ -58,7 +59,8 @@ const data = [
 
 
 const MainDashboard = () => {
-  const topCoinsQuery: any = useFetchCoins();
+  const { ActiveCurrency } = useAppState();
+  const topCoinsQuery: any = useFetchCoins(ActiveCurrency);
 
   if (topCoinsQuery.isLoading) { return <Box sx={{ p: 1 }}>Loading...</Box> }
   if (topCoinsQuery.isError) { return <Box sx={{ p: 1 }}>{topCoinsQuery.error.message}</Box> }

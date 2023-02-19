@@ -10,6 +10,7 @@ interface IResponsiveCard {
 const CardStyle = styled('div')(({ theme }) => ({
   '& .MuiCardContent-root': {
     // paddingBottom: 0
+    color: "#1a252a"
   }
 }));
 
@@ -25,14 +26,14 @@ function ResponsiveCard({ title, subTitle, imgUrl }: IResponsiveCard) {
             <Box className="flex">
 
               <Box className="flex-col flex1">
-                <Typography sx={{ fontSize: 22 }} gutterBottom>
+                <Typography sx={{ fontSize: 22 }} gutterBottom color={'primary'} >
                   {title}
                 </Typography>
                 <div className="flex-center-y">
-                  <Typography sx={{ fontSize: 30, fontWeight: 700 }} color="text.secondary" gutterBottom>
+                  <Typography sx={{ fontSize: 30, fontWeight: 700 }} color={'primary'} gutterBottom>
                     {subTitle}
                   </Typography>
-                  <Typography sx={{ ml: .5 }} variant='subtitle1'>USD</Typography>
+                  <Typography sx={{ ml: .5 }} variant='subtitle1' color={'primary'} >USD</Typography>
                 </div>
               </Box>
 

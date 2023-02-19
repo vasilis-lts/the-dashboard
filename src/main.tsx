@@ -6,8 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AppProvider } from './context/AppContext';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const queryClient = new QueryClient();
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1a252a',
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -15,7 +24,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <AuthProvider>
         <AppProvider>
           <BrowserRouter>
-            <App />
+            <ThemeProvider theme={theme}>
+              <App />
+            </ThemeProvider>
           </BrowserRouter>
         </AppProvider>
       </AuthProvider>

@@ -68,8 +68,8 @@ const MainDashboard = () => {
 
       {/* CARDS */}
       <Box component="main" sx={{ flexGrow: 1, mb: 3, mt: 1 }}>
-        <Typography variant='h4' sx={{ mb: 2 }}><b>Analytics</b></Typography>
-        <Typography variant='h5' sx={{ mb: 2 }}><b>Top 3 coins by market cap</b></Typography>
+        <Typography variant='h4' className="dark" sx={{ mb: 2 }}><b>Analytics</b></Typography>
+        <Typography variant='h5' className="dark" sx={{ mb: 2 }}><b>Top 3 coins by market cap</b></Typography>
 
         {topCoinsQuery.isSuccess ?
           <Grid container spacing={3}>

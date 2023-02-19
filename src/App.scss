@@ -25,16 +25,20 @@ $headerHeight: 70px;
   height: $headerHeight;
 }
 
+.dark {
+  color: $dark_main;
+}
+
 #drawerList {
-  background-color: $dark_main;
+  // background-color: $dark_main;
 
-  li {
-    color: white
-  }
+  // li {
+  //   color: white;
+  // }
 
-  svg {
-    fill: white;
-  }
+  // svg {
+  //   fill: white;
+  // }
 
   li:hover {
     background-color: lighten($color: $dark_main, $amount: 10);

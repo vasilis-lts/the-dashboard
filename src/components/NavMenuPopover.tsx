@@ -12,9 +12,7 @@ import styled from '@emotion/styled';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const PopoverStyle = styled('div')(({ theme }) => ({
-  '& li svg': {
-    fill: "#fff"
-  }
+
 }));
 
 export default function NavMenuPopover({ title }) {
@@ -62,7 +60,7 @@ export default function NavMenuPopover({ title }) {
                 <ListItemIcon>
                   <AnalyticsIcon />
                 </ListItemIcon>
-                <ListItemText primary={'Analytics'} />
+                <ListItemText primary={'Analytics'} className="dark" />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -73,7 +71,7 @@ export default function NavMenuPopover({ title }) {
                 <ListItemIcon>
                   <GroupIcon />
                 </ListItemIcon>
-                <ListItemText primary={'Users'} />
+                <ListItemText primary={'Users'} className="dark" />
               </ListItemButton>
             </ListItem>
           </Link>

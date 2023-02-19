@@ -98,7 +98,7 @@ function UsersManagement() {
 
   return (
     <ScreenContainer>
-      <Typography variant='h4' sx={{ mt: 1 }} className='flex1' gutterBottom><b>Users management</b></Typography>
+      <Typography variant='h4' sx={{ mt: 1 }} className='flex1 dark' gutterBottom><b>Users management</b></Typography>
       <Box sx={{ mt: 3 }}>
         <Button variant='contained' onClick={addItem}>Add user</Button>
         {UsersData.length && columns.length ?

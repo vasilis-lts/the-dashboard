@@ -36,7 +36,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       fill: 'white'
     },
     '& #drawerList': {
-      flex: 1
+      flex: 1,
+      background: "#1a252a"
+    },
+    '& #drawerList li': {
+      color: "white"
     },
     '& #drawerList span': {
       fontSize: 16,

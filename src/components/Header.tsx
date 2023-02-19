@@ -1,4 +1,4 @@
-import { Box, Button, Popover } from "@mui/material";
+import { Box, Button, Divider, MenuItem, Popover, Select, Typography } from "@mui/material";
 import { useState } from "react";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link, useNavigate } from "react-router-dom";
@@ -10,8 +10,10 @@ import {
 } from '@mui/material';
 import useAuthState from "../hooks/useAuthState";
 import { authState } from "../constants";
+import useAppState from "../hooks/useAppState";
 
 export default function Header() {
+  const { ActiveCurrency, setActiveCurrency } = useAppState();
   const { setAuthStatus } = useAuthState();
   let navigate = useNavigate();
 
@@ -61,10 +63,10 @@ export default function Header() {
             aria-haspopup="true"
             aria-expanded={openU ? 'true' : undefined}
             onClick={handleClick}
-            endIcon={<AccountCircleIcon style={{ color: '#222', fontSize: 34 }} />}>
+            endIcon={<AccountCircleIcon style={{ color: '#1a252a', fontSize: 34 }} />}>
             <div className="flex-center-y">
               <div
-                style={{ margin: 0, color: "#777", fontWeight: 400, fontSize: 16, textTransform: 'initial' }}
+                style={{ margin: 0, color: "#1a252a", fontWeight: 400, fontSize: 16, textTransform: 'initial' }}
                 className="account-username">Welcome, <b>John Doe</b>
               </div>
             </div>
@@ -78,7 +80,22 @@ export default function Header() {
               vertical: 'bottom',
               horizontal: 'right',
             }}>
-            <ul id="drawerList" style={{ margin: 0, padding: 0 }}>
+            <ul id="drawerList" style={{ margin: 0, padding: 5, backgroundColor: "white" }}>
+              <Typography className="text-center" variant="subtitle1"><b>Active currency</b></Typography>
+
+              <ListItem disablePadding onClick={handleClose}>
+                <Select
+                  sx={{ backgroundColor: "white", width: '100%' }}
+                  id='activeCurrency'
+                  size="small"
+                  value={ActiveCurrency}
+                  onChange={(e) => setActiveCurrency(e.target.value)}
+                >
+                  <MenuItem value={'usd'}>$ USD</MenuItem>
+                  <MenuItem value={'eur'}>€ EUR</MenuItem>
+                </Select>
+              </ListItem>
+
               <ListItem disablePadding onClick={handleClose}>
                 <ListItemButton onClick={logout}>
                   <ListItemIcon sx={{ minWidth: 30 }}>

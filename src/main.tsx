@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
-
+import { AppProvider } from './context/AppContext';
 
 const queryClient = new QueryClient();
 
@@ -13,9 +13,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <AppProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </AppProvider>
       </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>,

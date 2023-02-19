@@ -28,7 +28,7 @@ export default function MarketChart({ coinsData }) {
   return (<>
     <Box className="flex flex-resp jcsb" sx={{ mb: 1 }}>
 
-      <Typography variant='h5' sx={{ mt: 1 }} className='flex1' gutterBottom><b>Coin price chart</b></Typography>
+      <Typography variant='h5' sx={{ mt: 1 }} className='flex1 dark' gutterBottom><b>Coin price chart</b></Typography>
 
       <Box className="flex-center-y" sx={{ mt: 1 }}>
         <label htmlFor="coin-chart-select"><b>Select coin:</b></label>
